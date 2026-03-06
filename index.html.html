@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Beautiful Tara 💖</title>
+    <style>
+        /* Expanded the font weights to include bolder options for the mirror text */
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700;800;900&display=swap');
+
+        body {
+            font-family: 'Fredoka', sans-serif;
+            background-color: #fdf2f8; /* Light pink background */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Changed to min-height so it can stretch */
+            margin: 0;
+            overflow-y: auto; /* Allows scrolling up and down! */
+            padding: 20px 0; /* Adds a little breathing room at the top/bottom */
+        }
+
+        .page {
+            display: none; /* Hides all pages by default */
+            text-align: center;
+            animation: fadeIn 0.5s ease-in-out;
+            max-width: 500px;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .page.active {
+            display: block; /* Shows only the active page */
+        }
+
+        h1 {
+            color: #db2777; /* Deep pink */
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #be185d;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 15px;
+            margin: 15px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Button Styling */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        button {
+            font-family: 'Fredoka', sans-serif;
+            background-color: #fbcfe8;
+            color: #be185d;
+            border: 2px solid #f9a8d4;
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(219, 39, 119, 0.2);
+        }
+
+        button:hover {
+            background-color: #f9a8d4;
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(219, 39, 119, 0.3);
+        }
+
+        /* Gift Grid */
+        .gift-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .gift {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            border: 2px dashed #f9a8d4;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .gift:hover {
+            transform: scale(1.05);
+            background-color: #fdf2f8;
+        }
+
+        .gift img {
+            width: 80px;
+            box-shadow: none;
+            margin: 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- NEW EXPANDED CSS FOR BREATHING ANIMATION --- */
+        @keyframes breathingEffect {
+            0% { transform: scale(1); box-shadow: 0 0 10px rgba(219, 39, 119, 0.2); }
+            50% { transform: scale(1.05); box-shadow: 0 0 25px rgba(219, 39, 119, 0.6); }
+            100% { transform: scale(1); box-shadow: 0 0 10px rgba(219, 39, 119, 0.2); }
+        }
+
+        .breathing-frame {
+            animation: breathingEffect 3.5s ease-in-out infinite;
+        }
+        /* ------------------------------------------------ */
+
+        /* --- NEW EXPANDED CSS FOR TYPOGRAPHY ART --- */
+        .mirror-text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            margin: 20px 0;
+            text-transform: uppercase;
+        }
+        .mirror-text-container div {
+            margin: 0;
+            padding: 0;
+        }
+        .mirror-line1, .mirror-line2 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: #222;
+            letter-spacing: -2px;
+        }
+        .mirror-line2 {
+            margin-top: -10px; /* Pulls the words closer together */
+        }
+        .mirror-line3 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #222;
+            margin-top: 5px;
+        }
+        .mirror-line4 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #222;
+            margin-top: 5px;
+        }
+        .mirror-line5 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #ff3366; /* Vibrant pink/red */
+            margin: 10px 0;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.05);
+        }
+        .mirror-line6 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #222;
+            letter-spacing: 3px;
+        }
+        .mirror-line7 {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #222;
+            margin-top: 5px;
+        }
+        /* ------------------------------------------------ */
+
+    </style>
+</head>
+<body>
+
+    <div id="page1" class="page active">
+        <h1>Hey Tara! I made something for you... 🥰</h1>
+        <p>Do you wanna see?? 👀</p>
+        
+        <img src="1st.gif" alt="Cute Couple Art">
+        
+        <div class="btn-container">
+            <button onclick="goToPage('page2')">YES 💖</button>
+            <button onclick="goToPage('page-no')">NO 🙅‍♀️</button>
+        </div>
+    </div>
+
+    <div id="page-no" class="page">
+        <h1>HOW DARE YOU! 😠🔪</h1>
+        <img src="hdu.gif" alt="Angry Cat">
+        <div class="btn-container">
+            <button onclick="goToPage('page1')">TRY AGAIN 🥺</button>
+        </div>
+    </div>
+
+    <div id="page2" class="page">
+        <h1>That's a good girl! 😌✨</h1>
+        <img src="k1.png" alt="Head Pat">
+        <div class="btn-container">
+            <button onclick="goToPage('page3')">NEXT ➡️</button>
+        </div>
+    </div>
+
+    <div id="page3" class="page">
+        <h1>✨ Happy Women's Day ✨</h1>
+
+        <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 20px; margin: 25px 0; background: #fff; padding: 20px; border-radius: 25px; border: 2px dashed #f9a8d4;">
+            <img src="wds.jpg" class="breathing-frame" alt="Our Picture" style="width: 140px; height: auto; border-radius: 50%; border: 5px solid #fbcfe8; margin: 0; flex-shrink: 0;">
+            
+            <div style="text-align: left;">
+                <p style="font-size: 1.05rem; line-height: 1.5; color: #db2777; margin: 0;">
+                    Tara, you are the most magical part of my life. Your smile is my favorite view, your kindness inspires me daily, and your love is my greatest treasure. Watching the strong, beautiful woman you are fills me with endless pride. I am so incredibly lucky to call you mine. I love you more than words could ever say. ❤️
+                </p>
+            </div>
+        </div>
+        <p>To the queen of my heart 👑</p>
+        <img src="https://media.tenor.com/m/aP3O3k-p4H8AAAAd/crown.gif" alt="Crown">
+        <div class="btn-container">
+            <button onclick="goToPage('page-gifts')">SEE GIFTS 🎁</button>
+        </div>
+    </div>
+
+    <div id="page-gifts" class="page">
+        <h1>GIFTS FOR YOU 💝</h1>
+        <p>Click any gift to open! 👇</p>
+        <div class="gift-grid">
+            <div class="gift" onclick="goToPage('gift1')">
+                <h1 style="display: none;">🎁</h1>
+                <img src="giftbox.gif" alt="Gift Box">
+            </div>
+            <div class="gift" onclick="goToPage('gift2')">
+                <h1 style="display: none;">🎁</h1>
+                <img src="giftbox.gif" alt="Gift Box">
+            </div>
+            <div class="gift" onclick="goToPage('gift3')">
+                <h1 style="display: none;">🎁</h1>
+                <img src="giftbox.gif" alt="Gift Box">
+            </div>
+            <div class="gift" onclick="goToPage('gift1')" style="display: none;">
+                <h1 style="display: none;">🎁</h1>
+                <img src="giftbox.gif" alt="Gift Box">
+            </div>
+            <div class="gift" onclick="goToPage('gift4')">
+                <h1 style="display: none;">🎁</h1>
+                <img src="giftbox.gif" alt="Gift Box">
+            </div>
+            </div>
+    </div>
+
+    <div id="gift1" class="page">
+        <h1 style="display: none;">Mirror mirror on the wall... 🪞</h1>
+        <p style="display: none;">Who is the strongest, most beautiful of them all? 🤔</p>
+        
+        <div class="mirror-text-container">
+            <div class="mirror-line1">MIRROR</div>
+            <div class="mirror-line2">MIRROR</div>
+            <div class="mirror-line3">ON THE WALL</div>
+            <div class="mirror-line4">WHO IS THE</div>
+            <div class="mirror-line5">STRONGEST</div>
+            <div class="mirror-line6">-OF-</div>
+            <div class="mirror-line7">THEM ALL?</div>
+        </div>
+        <div class="btn-container">
+            <button onclick="goToPage('gift1-reveal')">Let's find out 🪄</button>
+        </div>
+    </div>
+
+    <div id="gift1-reveal" class="page">
+        <h1 style="font-size: 3rem; color: #fbbf24; background: #333; padding: 20px; border-radius: 10px; border: 2px solid #fbbf24; display: none;">IT'S YOU! 🫵💖</h1>
+        
+        <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 20px; background: #333; padding: 20px; border-radius: 10px; border: 2px solid #fbbf24; width: fit-content; margin: 0 auto;">
+            <h1 style="font-size: 3rem; color: #fbbf24; margin: 0; padding: 0; background: transparent; border: none;">IT'S YOU! 🥰👑</h1>
+            <img src="csu.gif" alt="Celebration" style="width: 100px; height: auto; margin: 0; border-radius: 10px; box-shadow: none;">
+        </div>
+        <div class="btn-container">
+            <button onclick="goToPage('page-gifts')">BACK TO GIFTS 🔙</button>
+        </div>
+    </div>
+
+    <div id="gift2" class="page">
+        <div style="display: none;">
+            <h1>Love Letter 💌</h1>
+            <p style="background: white; padding: 20px; border-radius: 10px; border: 1px solid #f9a8d4; text-align: left;">
+                Hey love,<br><br>
+                I'm sending you this little virtual bouquet. 💐 I wish I could hand you real flowers myself, but until I get to see you again, let these carry a little bit of my warmth to you. 🌸💞<br><br>
+                Love always.
+            </p>
+        </div>
+
+        <h1 style="font-size: 4rem; margin-bottom: 10px;">💌</h1>
+        <p style="background: white; padding: 25px; border-radius: 15px; border: 2px dashed #f9a8d4; text-align: left; line-height: 1.6; font-size: 1.15rem; box-shadow: 0 4px 15px rgba(219, 39, 119, 0.1);">
+            My Tara 🥰💖✨🥺🌹<br><br>
+            You are the absolute light of my life and the beat of my heart! 💓 Every single day I wake up feeling like the luckiest person in the whole universe because I get to call you mine. 🥺💞 You are so stunning, so incredibly smart, and your heart is just pure gold. 🌟🍯✨ I am constantly in awe of your strength and your beautiful soul. 🦋🌸 No matter what happens, I want you to know that I will always be right here, cheering for you, protecting you, and loving you with every fiber of my being. 🫂🛡️💘 You are my dream come true, my forever and always, and my sweet queen. 👑💍✨ Happy Women's Day to the most magnificent woman I know! I love you endlessly! ♾️❤️🔥🥰
+        </p>
+        <div class="btn-container">
+            <button onclick="goToPage('page-gifts')">BACK TO GIFTS 🔙</button>
+        </div>
+    </div>
+
+    <div id="gift3" class="page">
+        <h1>BEST WOMEN OF ALL 👑</h1>
+        
+        <div style="display: none;">
+            <div class="gift-grid" style="grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                <img style="width: 100%; margin: 0; border-radius: 10px;" src="https://via.placeholder.com/100/ffb6c1/ffffff?text=Belle" alt="Belle">
+                <img style="width: 100%; margin: 0; border-radius: 10px;" src="https://via.placeholder.com/100/ffb6c1/ffffff?text=Ariel" alt="Ariel">
+                <img style="width: 100%; margin: 0; border-radius: 10px; border: 3px solid #db2777;" src="https://via.placeholder.com/100/db2777/ffffff?text=Tara" alt="Tara">
+            </div>
+        </div>
+
+        <div class="gift-grid" style="grid-template-columns: 1fr 1fr 1fr; gap: 15px; align-items: end; margin-bottom: 20px;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
+                <img style="width: 100%; margin: 0; border-radius: 10px; border: 2px solid #f9a8d4; object-fit: cover; aspect-ratio: 1/1;" src="belle.jpg" alt="Belle">
+                <span style="font-weight: 600; color: #be185d;">Belle</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
+                <img style="width: 100%; margin: 0; border-radius: 10px; border: 2px solid #f9a8d4; object-fit: cover; aspect-ratio: 1/1;" src="ariel.jpg" alt="Ariel">
+                <span style="font-weight: 600; color: #be185d;">Ariel</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
+                <img class="breathing-frame" style="width: 100%; margin: 0; border-radius: 10px; border: 4px solid #db2777; object-fit: cover; aspect-ratio: 1/1; transform: scale(1.15);" src="tara.jpg" alt="Tara">
+                <span style="font-weight: 800; color: #db2777; font-size: 1.1rem; margin-top: 5px;">TARA 💖</span>
+            </div>
+        </div>
+        <div class="btn-container">
+            <button onclick="goToPage('page-gifts')">BACK TO GIFTS 🔙</button>
+        </div>
+    </div>
+
+    <div id="gift4" class="page">
+        <h1 style="font-size: 2.8rem; color: #e11d48; text-shadow: 0 0 15px rgba(225, 29, 72, 0.4);">FOREVER YOURS 💍</h1>
+        
+        <div style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(219, 39, 119, 0.3); text-align: center; margin-bottom: 25px; border: 3px solid #fff;">
+            <p style="color: #831843; font-size: 1.15rem; line-height: 1.8; font-weight: 600; margin: 0;">
+                Tara, my universe... 🌌✨<br><br>
+                Every single second with you feels like magic. 🥺🪄 You are the most precious, breathtakingly gorgeous, and irreplaceable person in my life. 💖✨ I promise to hold your hand through every high and low, to kiss away your worries, and to celebrate every victory by your side. 🫂🏆❤️ <br><br>
+                You aren't just my girl, you are my soulmate, my home, and my entire world. 🌍🏡💘 I will spend the rest of my life making sure you know exactly how deeply, madly, and overwhelmingly you are loved. ♾️👩‍❤️‍👨🔥
+            </p>
+        </div>
+
+        <img src="raccoon.jfif" alt="Hug" class="breathing-frame" style="width: 140px; border-radius: 50%; border: 5px solid #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+
+        <div class="btn-container">
+            <button onclick="goToPage('page-gifts')">BACK TO GIFTS 🔙</button>
+        </div>
+    </div>
+    <script>
+        // The magic engine that swaps the pages
+        function goToPage(pageId) {
+            // 1. Hide all pages by removing the 'active' class
+            const allPages = document.querySelectorAll('.page');
+            allPages.forEach(page => page.classList.remove('active'));
+
+            // 2. Show the specific page that was asked for
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
